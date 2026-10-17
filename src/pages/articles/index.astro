@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a,b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<BaseLayout title="Articles" description="All BREATH articles on breathing, sleep, mindfulness and health.">
+  <section class="prose"><p class="eyebrow">The journal</p><h1>Articles</h1><p>Clear, evidence-informed writing on breathing, sleep and wellbeing.</p></section>
+  <section class="wrap listing">
+    <label class="search-label" for="article-search">Search articles</label>
+    <input id="article-search" type="search" placeholder="Search titles, topics and descriptions…" />
+    <div class="article-grid" id="article-list">
+      {posts.map(post => <article class="article-card" data-search={`${post.data.title} ${post.data.description} ${post.data.category} ${post.data.tags.join(' ')}`.toLowerCase()}><span class="category">{post.data.category}</span><h3><a href={`/articles/${post.id}/`}>{post.data.title}</a></h3><p>{post.data.description}</p><span class="date">{post.data.pubDate.toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})}</span></article>)}
+    </div>
+    <p id="no-results" hidden>No articles match that search.</p>
+  </section>
+  <script>
+    const search = document.querySelector('#article-search');
+    const cards = [...document.querySelectorAll('#article-list .article-card')];
+    const noResults = document.querySelector('#no-results');
+    search?.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      let shown = 0;
+      cards.forEach(card => { const match = (card.dataset.search || '').includes(q); card.hidden = !match; if (match) shown++; });
+      if (noResults) noResults.hidden = shown !== 0;
+    });
+  </script>
+</BaseLayout>
+<style>
+.listing{padding-bottom:20px}
+.search-label{display:block;font-size:.85rem;font-weight:700;margin:0 0 7px}
+input[type=search]{width:100%;max-width:520px;padding:13px 15px;border:1px solid #cbd1c9;border-radius:6px;background:#fffefa;font:inherit;margin-bottom:25px}
+.article-card[hidden]{display:none}
+</style>

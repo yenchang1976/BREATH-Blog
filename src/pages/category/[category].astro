@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const categories = ['Breathing', 'Sleep', 'Mindfulness', 'Research'];
+  return categories.map((category) => ({
+    params: { category: category.toLowerCase() },
+    props: { category }
+  }));
+}
+
+const { category } = Astro.props;
+const posts = (await getCollection('blog', ({ data }) => !data.draft && data.category === category))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<BaseLayout title={category} description={`BREATH articles about ${category.toLowerCase()}.`}>
+  <section class="prose"><p class="eyebrow">Explore a theme</p><h1>{category}</h1><p>Articles and perspectives on {category.toLowerCase()}.</p></section>
+  <section class="wrap listing">
+    {posts.length ? <div class="article-grid">{posts.map(post => <article class="article-card"><span class="category">{post.data.category}</span><h3><a href={`/articles/${post.id}/`}>{post.data.title}</a></h3><p>{post.data.description}</p><span class="date">{post.data.pubDate.toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})}</span></article>)}</div> : <div class="empty"><h3>Articles coming soon</h3><p>New writing on {category.toLowerCase()} will appear here as it is published.</p><a href="/articles/">Browse all articles →</a></div>}
+  </section>
+</BaseLayout>
+<style>.listing{padding-bottom:30px}.empty{padding:25px;background:#fffefa;border:1px dashed #d7d9d0;border-radius:8px;color:#66716d}.empty a{color:#315b51}</style>

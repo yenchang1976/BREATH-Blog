@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const posts = allPosts.sort((a,b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0,3);
+---
+<BaseLayout title="BREATH" description="Evidence-informed insights into breathing, sleep, mindfulness and health.">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Breath · Rest · Energy · Awareness · Tranquillity · Health</p>
+      <h1>Understand your breath.<br /><em>Rediscover your rest.</em></h1>
+      <p class="intro">Evidence-informed perspectives on breathing, sleep and wellbeing — making health science clearer, more useful and easier to apply.</p>
+      <div class="actions"><a class="button" href="/articles/">Explore articles</a><a class="button secondary" href="/about/">About BREATH</a></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="sun"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="art-label">BREATHE<br/><span>·</span> REST <span>·</span> RECONNECT</div>
+    </div>
+  </section>
+  <section class="wrap">
+    <div class="section-heading"><div><p class="eyebrow">Explore the themes</p><h2>Health, seen more clearly.</h2></div></div>
+    <div class="theme-grid">
+      <a href="/category/breathing/" class="theme"><span>01</span><h3>Breathing</h3><p>Respiratory health, physiology and practical understanding.</p><b>Explore →</b></a>
+      <a href="/category/sleep/" class="theme"><span>02</span><h3>Sleep</h3><p>Sleep health, sleep apnoea and the science of rest.</p><b>Explore →</b></a>
+      <a href="/category/mindfulness/" class="theme"><span>03</span><h3>Mindfulness</h3><p>Awareness, stress and the connection between mind and body.</p><b>Explore →</b></a>
+      <a href="/category/research/" class="theme"><span>04</span><h3>Research</h3><p>Evidence, clinical studies and health ideas examined carefully.</p><b>Explore →</b></a>
+    </div>
+  </section>
+  <section class="wrap latest">
+    <div class="section-heading"><div><p class="eyebrow">From the journal</p><h2>Latest articles</h2></div><a href="/articles/">View all articles →</a></div>
+    {posts.length > 0 ? <div class="article-grid">{posts.map(post => <article class="article-card"><span class="category">{post.data.category}</span><h3><a href={`/articles/${post.id}/`}>{post.data.title}</a></h3><p>{post.data.description}</p><span class="date">{post.data.pubDate.toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})}</span></article>)}</div> : <div class="empty"><h3>Your first article starts here.</h3><p>Add a Markdown file to <code>src/content/blog/</code> and it will appear here automatically.</p></div>}
+  </section>
+</BaseLayout>
+<style>
+.hero{max-width:1120px;margin:0 auto;padding:74px 28px 82px;display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+.hero h1{font-size:clamp(2.7rem,5.8vw,4.9rem);letter-spacing:-.065em;line-height:1.02;margin:22px 0}
+.hero h1 em{font-style:normal;color:#b86d43}
+.intro{max-width:570px;font-size:1.12rem;color:#596963;line-height:1.8}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-art{height:350px;position:relative;overflow:hidden;border-radius:48% 48% 8px 8px;background:linear-gradient(155deg,#d9e4d8,#f0d9c3);display:grid;place-items:center}
+.sun{width:145px;height:145px;background:#f6f0dc;border-radius:50%;position:absolute;top:48px;left:calc(50% - 72px);box-shadow:0 0 0 22px #f6f0dc55}
+.orbit{position:absolute;border:1px solid #55776d88;border-radius:50%;width:280px;height:280px;transform:rotate(-28deg)}
+.orbit-two{width:390px;height:190px;transform:rotate(38deg);border-color:#b86d4388}
+.art-label{z-index:1;text-align:center;letter-spacing:.18em;font-size:.72rem;font-weight:800;color:#254a42;line-height:2.2;margin-top:100px}
+.art-label span{color:#b86d43}
+.theme-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.theme{padding:23px 20px 21px;background:#eeeee7;border-radius:7px;text-decoration:none;transition:transform .2s}
+.theme:hover{transform:translateY(-3px)}
+.theme>span{font-size:.75rem;color:#b86d43;font-weight:800}
+.theme h3{margin:19px 0 7px;font-size:1.2rem}
+.theme p{font-size:.9rem;color:#66716d;min-height:70px;margin:0 0 18px}
+.theme b{font-size:.85rem;color:#315b51}
+.latest{padding-bottom:30px}
+.empty{padding:25px;background:#fffefa;border:1px dashed #d7d9d0;border-radius:8px;color:#66716d}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:48px 20px 55px;gap:30px}.hero-art{height:260px;max-width:430px;width:100%;margin:auto}.theme-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.theme p{min-height:0}}
+@media(max-width:420px){.theme-grid{grid-template-columns:1fr}}
+</style>
