@@ -12,6 +12,13 @@ const { Content } = await render(post);
   <article class="prose article-page">
     <a class="back" href="/articles/">← All articles</a>
     <p class="eyebrow">{post.data.category}</p>
+{post.id === "vaping-smoking-lung-health" && (
+  <img
+    src="/images/vaping-lungs.jpg"
+    alt="Electronic cigarette, tobacco cigarette and a person coughing"
+    class="article-cover"
+  />
+)}
     <h1>{post.data.title}</h1>
     <p class="article-meta">{post.data.pubDate.toLocaleDateString('en-AU',{day:'numeric',month:'long',year:'numeric'})}</p>
     <p class="standfirst">{post.data.description}</p>
