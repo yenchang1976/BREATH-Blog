@@ -7,10 +7,6 @@ cover: "/images/vaping-lungs.jpg"
 draft: false
 ---
 
-# Vaping, Smoking and Your Lungs: What Australians Should Know
-
-*Smoking is a well-established cause of serious disease. Vaping may expose your lungs to harmful substances, but its long-term effects are still being studied. So what should you do if you smoke—or vape?*
-
 ## Smoking: the harm is well established
 
 Tobacco smoke contains thousands of chemicals, including many known to cause cancer. Smoking is a major cause of lung cancer, chronic obstructive pulmonary disease (COPD), heart disease and stroke. Second-hand smoke can also harm people around you.
