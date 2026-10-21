@@ -28,6 +28,15 @@ const { Content } = await render(post);
   </article>
 </BaseLayout>
 <style>
+.article-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 24px 0;
+}
 .article-page{padding-bottom:50px}
 .back{text-decoration:none;color:#687571;font-size:.88rem}
 .article-page .eyebrow{margin-top:34px}
