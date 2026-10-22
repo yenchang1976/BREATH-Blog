@@ -26,7 +26,7 @@ const pageTitle = title === 'Behind the Breath' ? title : `${title} | Behind the
       </nav>
     </header>
 
-    <main><slot /></main>
+    <main class="article-content"><slot /></main>
 
     <footer class="site-footer">
       <div>
@@ -60,6 +60,37 @@ const pageTitle = title === 'Behind the Breath' ? title : `${title} | Behind the
   *::after {
     box-sizing: border-box;
   }
+
+/* Article table styling */
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.article-content th,
+.article-content td {
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #dce3e6;
+}
+
+.article-content thead th {
+  background: #e8f1f6;
+  color: #19364d;
+  font-weight: 600;
+}
+
+.article-content tbody tr:nth-child(even) {
+  background: #f5f7f8;
+}
+
+.article-content tbody tr:hover {
+  background: #edf3f6;
+}
 
   html {
     margin: 0;
