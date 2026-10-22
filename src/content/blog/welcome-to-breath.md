@@ -4,7 +4,7 @@ description: "An introduction to BREATH and its focus on breathing, sleep and we
 pubDate: 2026-10-17
 category: "Research"
 tags: ["welcome", "health", "wellbeing"]
-cover: "/images/welcome_to_BREATH.png"
+cover: "/images/welcome_to_breath.jpg"
 draft: false
 ---
 
