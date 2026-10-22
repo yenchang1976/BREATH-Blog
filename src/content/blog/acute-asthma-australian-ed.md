@@ -5,8 +5,6 @@ pubDate: 2026-10-22
 category: "Education"
 ---
 
-# Acute Asthma in the Australian ED: A BPT MCQ Guide
-
 *Adults and adolescents aged ≥12 years · Australian Asthma Handbook v3.0 framework · Evidence checked 22 October 2026*
 
 ## 1. Why this topic matters
