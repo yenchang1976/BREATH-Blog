@@ -19,7 +19,7 @@ Australia’s asthma burden remains substantial:
 
 These figures cover asthma across all ages, not adult exacerbations alone. Expenditure is not the economic cost of acute attacks, and hospital services include more than inpatient admissions. The mortality update comes from the National Asthma Council’s ABS-commissioned 2024 data; the AIHW page still reports 480 deaths for 2023. [AIHW](https://www.aihw.gov.au/reports/chronic-respiratory-conditions/asthma); [NAC mortality data](https://files.nationalasthma.org.au/resources/Asthma-Mortality-Data-2024-Final.pdf).
 
-![Original Australian asthma burden infographic](australian-asthma-burden.png)
+![Original Australian asthma burden infographic](/images/australian-asthma-burden.png)
 
 *Figure 1. Original summary; years and populations are deliberately labelled.*
 
@@ -51,7 +51,7 @@ Repeat salbutamol every 20 minutes during the first hour according to response, 
 
 **Technique is treatment:** shake before each actuation, give one actuation at a time, and allow tidal breathing through the spacer when too breathless for a single-breath technique. Do not load multiple actuations into the chamber together. [NAC spacer instructions](https://www.nationalasthma.org.au/living-with-asthma/how-to-videos/how-to-use-a-puffer-with-a-spacer-for-adults).
 
-![Original Australian adult ED escalation diagram](acute-asthma-flowchart.png)
+![Original Australian adult ED escalation diagram](/images/acute-asthma-flowchart.png)
 
 *Figure 2. Original teaching diagram using the Handbook pathway; urgent escalation and treatment proceed together.*
 
