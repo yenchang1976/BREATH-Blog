@@ -1,3 +1,10 @@
+---
+title: "Acute Asthma in the Australian ED: A BPT MCQ Guide"
+description: "A practical evidence-based guide to acute asthma assessment, treatment doses and escalation in Australian emergency departments."
+pubDate: 2026-10-22
+category: "Respiratory"
+---
+
 # Acute Asthma in the Australian ED: A BPT MCQ Guide
 
 *Adults and adolescents aged ≥12 years · Australian Asthma Handbook v3.0 framework · Evidence checked 22 October 2026*
