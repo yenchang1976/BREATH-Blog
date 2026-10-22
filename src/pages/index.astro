@@ -100,12 +100,19 @@ const posts = allPosts
           {posts.map((post) => (
             <article class="article-card">
               {post.data.title === "Vaping, Smoking and Your Lungs: What Australians Should Know" && (
-                 <img
-                   src="/images/vaping-lungs.jpg"
-                   alt="Vape, tobacco cigarette and a person coughing"
-                   class="article-cover"
-                 />
-          )}
+               <img
+               src="/images/vaping-lungs.jpg"
+               alt="Vape, tobacco cigarette and a person coughing"
+               class="article-cover"
+               />
+              )}
+              {post.data.title === "Welcome to BREATH" && (
+               <img
+               src="/images/welcome_to_BREATH.png"
+               alt="Welcome to BREATH"
+               class="article-cover"
+               />
+              )}
           <span class="category">{post.data.category}</span>
               <h3>
                 <a href={`/articles/${post.id}/`}>{post.data.title}</a>
