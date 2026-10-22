@@ -1,4 +1,5 @@
 ---
+![Welcome to BREATH](/images/welcome_to_BREATH.png)
 title: "Welcome to BREATH"
 description: "An introduction to BREATH and its focus on breathing, sleep and wellbeing."
 pubDate: 2026-10-17
