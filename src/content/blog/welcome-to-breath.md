@@ -4,9 +4,9 @@ description: "An introduction to BREATH and its focus on breathing, sleep and we
 pubDate: 2026-10-17
 category: "Research"
 tags: ["welcome", "health", "wellbeing"]
+cover: "/images/welcome_to_BREATH.png"
 draft: false
 ---
-![Welcome to BREATH](/images/welcome_to_BREATH.png)
 
 BREATH is a growing health knowledge platform exploring the science of breathing, sleep and wellbeing.
 
