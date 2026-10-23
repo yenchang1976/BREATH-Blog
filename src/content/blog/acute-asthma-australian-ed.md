@@ -1,5 +1,5 @@
 ---
-title: "Acute Asthma in the Australian ED: A BPT MCQ Guide"
+title: "Acute Asthma in the Australian ED"
 description: "A practical evidence-based guide to acute asthma assessment, treatment doses and escalation in Australian emergency departments."
 pubDate: 2026-10-22
 cover: "/images/acute-asthma-ed-cover.png"
