@@ -3,7 +3,7 @@ title: "Vaping, Smoking and Your Lungs: What Australians Should Know"
 description: "Smoking causes serious disease. Vaping is not harmless, and its long-term effects remain uncertain. Here is what the evidence means—and how to get help to quit."
 pubDate: 2026-10-21
 category: "Breathing"
-cover: "/images/vaping-lungs.jpg"
+cover: "/images/vaping-lungs-cover.jpg"
 draft: false
 ---
 
