@@ -12,10 +12,10 @@ const { Content } = await render(post);
   <article class="prose article-page">
     <a class="back" href="/articles/">← All articles</a>
     <p class="eyebrow">{post.data.category}</p>
-{post.id === "vaping-smoking-lung-health" && (
+{post.data.cover && (
   <img
-    src="/images/vaping-lungs.jpg"
-    alt="Electronic cigarette, tobacco cigarette and a person coughing"
+    src={post.data.cover}
+    alt={post.data.title}
     class="article-cover"
   />
 )}
