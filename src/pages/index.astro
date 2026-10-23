@@ -99,17 +99,24 @@ const posts = allPosts
         <div class="article-grid">
           {posts.map((post) => (
             <article class="article-card">
+              {post.data.title === "Welcome to BREATH" && (
+               <img
+               src="/images/welcome-to-breath-cover.jpg"
+               alt="Welcome to BREATH"
+               class="article-cover"
+               />
+              )}
               {post.data.title === "Vaping, Smoking and Your Lungs: What Australians Should Know" && (
                <img
-               src="/images/vaping-lungs.jpg"
+               src="/images/vaping-lungs-cover.jpg"
                alt="Vape, tobacco cigarette and a person coughing"
                class="article-cover"
                />
               )}
               {post.data.title === "Welcome to BREATH" && (
                <img
-               src="/images/welcome_to_breath.jpg"
-               alt="Welcome to BREATH"
+               src="/images/acute-asthma-ed-cover.png"
+               alt="Acute Asthma ED"
                class="article-cover"
                />
               )}
